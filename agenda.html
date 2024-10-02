@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Vegas Family Trip Agenda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #ffcc00;
+            border-bottom: 5px solid #ff66b2;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .mosaic {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .date-section {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #ff66b2;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 5px;
+        }
+        .event-title {
+            font-weight: 700;
+            margin: 10px 0;
+            color: #ffcc00;
+        }
+        .event-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .attendance-form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        .attendance-form input {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .attendance-form button {
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .attendance-form button:hover {
+            background-color: #ff4d94;
+        }
+        .map-link {
+            color: #ff66b2;
+            text-decoration: none;
+            margin-top: 5px;
+            display: inline-block;
+        }
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .break {
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Las Vegas Family Trip Agenda</h1>
+    </header>
+
+    <div class="mosaic">
+
+        <!-- Dates Section -->
+        <div class="date-section">
+            <h2>10/9/2024</h2>
+
+            <div class="event">
+                <p class="event-title">1. Fly In</p>
+                <p>Arriving at 11:59 PM with a limo picking us up from the airport.</p>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('Fly In')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <div class="event">
+                <img src="https://images.unsplash.com/photo-1580126466948-275c1d027e2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDI3fHxyZWxheCUyMHRpbWV8ZW58MHx8fHwxNjgyODMwNTMy&ixlib=rb-4.0.3&q=80&w=400" alt="Buddy V's Pizza" class="event-image">
+                <p class="event-title">2. Buddy V's Pizza</p>
+                <p>Address: 3327 S Las Vegas Blvd, Las Vegas, NV 89109.</p>
+                <a href="https://www.google.com/maps?q=3327+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109" class="map-link" target="_blank">View on Map</a>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('Buddy V\'s Pizza')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <div class="event">
+                <p class="event-title">3. Back to Linq or Nearby Casino</p>
+                <p>For gambling.</p>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('Gambling')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <div class="event">
+                <p class="event-title">4. Sleep</p>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('Sleep')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AUID:fly_in%0ADTSTAMP:20241009T235900Z%0AORGANIZER;CN=Family:mailto:family@example.com%0ASUMMARY:Fly%20In%0ADTSTART:20241009T235900Z%0AEND:VEVENT%0AEND:VCALENDAR" download="fly_in.ics" class="map-link">Download iCal</a>
+            <a href="https://calendar.google.com/calendar/r/eventedit?text=Fly%20In&dates=20241009T235900Z/20241009T235900Z&details=Arriving%20at%2011:59%20PM%20with%20a%20limo%20picking%20us%20up%20from%20the%20airport." class="map-link" target="_blank">Add to Google Calendar</a>
+        </div>
+
+        <div class="date-section">
+            <h2>10/10/2024</h2>
+
+            <div class="event">
+                <p class="event-title">1. Brunch</p>
+                <p>Optional brunch location.</p>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('Brunch')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <div class="event">
+                <img src="https://images.unsplash.com/photo-1594058327461-bc2b88a2e8cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDh8fHBvb2wlMjB0aW1lfGVufDB8fHx8MTY4MjgzMDYxNw&ixlib=rb-4.0.3&q=80&w=400" alt="Pool Time" class="event-image">
+                <p class="event-title">2. Pool Time</p>
+                <p>Linq pool or the Flamingo (or a pool party?).</p>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('Pool Time')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <div class="event">
+                <img src="https://images.unsplash.com/photo-1622546931733-e7b1cdbfe9de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fGNhYm8lMjB3YWJvfGVufDB8fHx8MTY4MjgzMDY1MA&ixlib=rb-4.0.3&q=80&w=400" alt="Cabo Wabo" class="event-image">
+                <p class="event-title">3. Dinner at Cabo Wabo</p>
+                <p>Address: 3663 S Las Vegas Blvd, Las Vegas, NV 89109.</p>
+                <a href="https://www.google.com/maps?q=3663+S+Las+Vegas+Blvd,+Las+Vegas,+NV+89109" class="map-link" target="_blank">View on Map</a>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('Dinner at Cabo Wabo')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <div class="event">
+                <p class="event-title">4. Gambling or Club?</p>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('Gambling or Club')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AUID:dinner_cabo_wabo%0ADTSTAMP:20241010T190000Z%0AORGANIZER;CN=Family:mailto:family@example.com%0ASUMMARY:Dinner%20at%20Cabo%20Wabo%0ADTSTART:20241010T190000Z%0AEND:VEVENT%0AEND:VCALENDAR" download="dinner_cabo_wabo.ics" class="map-link">Download iCal</a>
+            <a href="https://calendar.google.com/calendar/r/eventedit?text=Dinner%20at%20Cabo%20Wabo&dates=20241010T190000Z/20241010T200000Z&details=Dinner%20at%20Cabo%20Wabo%20at%207%20PM%20CST." class="map-link" target="_blank">Add to Google Calendar</a>
+        </div>
+
+        <div class="date-section">
+            <h2>10/11/2024</h2>
+
+            <div class="event">
+                <img src="https://images.unsplash.com/photo-1615370553890-fc2b7e6e6311?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDZ8fGF0dmV8ZW58MHx8fHwxNjgyODMwNTM5&ixlib=rb-4.0.3&q=80&w=400" alt="ATVing" class="event-image">
+                <p class="event-title">1. ATVing</p>
+                <p>Pickup at 10:10 AM.</p>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('ATVing')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <div class="event">
+                <p class="event-title">2. Pool Time</p>
+                <p>Relax after ATVing.</p>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('Pool Time')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <div class="event">
+                <p class="event-title">3. Blues Game</p>
+                <p>Gates open at 5:45 PM, ends between 9:30 PM and 10 PM.</p>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('Blues Game')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <div class="event">
+                <p class="event-title">4. Limo to Fremont</p>
+                <p>Departing at 10:15 PM.</p>
+                <div class="attendance-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Status (Attending/Not Attending)" required>
+                    <button type="button" onclick="submitAttendance('Limo to Fremont')">Submit</button>
+                </div>
+            </div>
+
+            <div class="break"></div>
+
+            <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0AUID:atving%0ADTSTAMP:20241011T101000Z%0AORGANIZER;CN=Family:mailto:family@example.com%0ASUMMARY:ATVing%0ADTSTART:20241011T101000Z%0AEND:VEVENT%0AEND:VCALENDAR" download="atving.ics" class="map-link">Download iCal</a>
+            <a href="https://calendar.google.com/calendar/r/eventedit?text=ATVing&dates=20241011T101000Z/20241011T111000Z&details=Pickup%20at%2010:10%20AM." class="map-link" target="_blank">Add to Google Calendar</a>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2024 Las Vegas Family Trip - Have Fun!
+    </footer>
+
+    <script>
+        function submitAttendance(eventName) {
+            const name = document.querySelector(`input[placeholder="Your Name"]`).value;
+            const status = document.querySelector(`input[placeholder="Status (Attending/Not Attending)"]`).value;
+            alert(`Thank you, ${name}! Your status for "${eventName}": ${status}`);
+            document.querySelector(`input[placeholder="Your Name"]`).value = '';
+            document.querySelector(`input[placeholder="Status (Attending/Not Attending)"]`).value = '';
+        }
+    </script>
+
+</body>
+</html>
